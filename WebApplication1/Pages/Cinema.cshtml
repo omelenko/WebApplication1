@@ -1,0 +1,22 @@
+﻿@page
+@model WebApplication1.Pages.CinemaModel
+@{
+	ViewData["Title"] = "Cinema";
+}
+@{
+
+    @foreach (var record in CinemaModel.FilmList)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => record.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => record.ShowList[0])
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => record.ShowList[1])
+            </td>
+        </tr>
+    }
+}

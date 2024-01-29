@@ -1,0 +1,56 @@
+﻿@page
+@model WebApplication1.Pages.AddModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-page="Create">Додати новий</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmList[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmList[0].Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmList[0].Style)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmList[0].Description)
+            </th>
+            <td>
+                @Html.DisplayNameFor(model => model.FilmList[0].ShowList)
+            </td>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Program.Movies)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Style)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowList)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item">Редагувати</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

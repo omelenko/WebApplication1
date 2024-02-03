@@ -23,7 +23,7 @@ namespace WebApplication1.Pages
 
             Program.Movies.Add(Movie);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./add");
         }
     }
 }

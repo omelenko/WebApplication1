@@ -22,7 +22,7 @@ namespace WebApplication1.Pages
 
             for(int i = 0; i<Program.Movies.Count; i++)
             {
-                if (Program.Movies[i].Name == Movie.Name) { Program.Movies[i]; }
+                if (Program.Movies[i].Name == Movie.Name) { Program.Movies[i] = Movie; }
             }
 
             return RedirectToPage("./add");
